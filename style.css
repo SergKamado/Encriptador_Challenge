@@ -1,0 +1,36 @@
+    body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 40px;
+}
+
+header img{
+    position: static;
+    width: 120px;
+    height: 48px;
+    left: 40px;
+    top: 40px;
+}
+
+.primera-seccion{
+    display: inline-block;
+    width: auto;
+}
+
+.segunda-seccion{
+    display: inline-block;
+    width: 400px;
+    border: 1px solid blue;       
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+    padding: 40px;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Encriptador Challenge</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <header>
+            <h1><img src="Imagenes/Logo.png"></h1> 
+        </header>
+
+        <main>
+
+            <div class="primera-seccion">            
+                <section class="texto-Input">            
+                    <input type="text" class="texto-escrito"/>
+
+                    <p><iconify-icon inline icon="bi:exclamation-circle-fill" style="color: #65747d;"></iconify-icon> Solo letras minúsculas sin acento</p>                
+                    <button onclick='encriptacion()'>Encriptar</button>
+                    <button onclick='desencriptacion()'>Desencriptar</button>
+                </section>
+            </div>
+            
+            <div class="segunda-seccion">
+                <section class="area-texto" id="imagen-no-texto">
+                    <img class="muñeco" src="Imagenes/Muñeco.png" alt="Imagen de no texto">
+                    <p>Ningún mensaje fue encontrado</p>
+                    <p>Ingresa el texto que desees encriptar o desencriptar.</p> 
+                </section>
+
+                <section class="area-texto" id="texto-escrito">
+                    <p id="textoMostrado"></p>
+                    <button id="copy" onclick='copiar()'>Copy</button>
+                </section>
+            </div>
+
+
+        </main>
+
+        <footer>
+
+            <img src="">
+            <p class="copyright">&copy Copyright Serg Dev - 2023</p>
+
+        </footer>
+
+    </body>
+</html>
+
+<script >
+
+    var texto = document.querySelector(".texto-escrito");
+    // texto.select();
+    texto.textContent = texto.textContent.toLowerCase()
+
+
+    var sin_texto = document.getElementById("imagen-no-texto");
+
+    var texto_escrito = document.getElementById("texto-escrito");
+    texto_escrito.style.display = "none";
+    
+    function encriptacion(){ 
+        encriptado= texto.value.replaceAll('e','enter');   
+        encriptado= encriptado.replaceAll('i','imes');  
+        encriptado= encriptado.replaceAll('a','ai');  
+        encriptado= encriptado.replaceAll('o','ober');  
+        encriptado= encriptado.replaceAll('u','ufat'); 
+
+        document.getElementById("textoMostrado").textContent = encriptado;
+        sin_texto.style.display = "none";
+        texto_escrito.style.display = "block";
+    }
+
+    function desencriptacion(){ 
+        desencriptado= texto.value.replaceAll('ufat','u');   
+        desencriptado= desencriptado.replaceAll('ober','o');  
+        desencriptado= desencriptado.replaceAll('ai','a');
+        desencriptado= desencriptado.replaceAll('imes','i'); 
+        desencriptado= desencriptado.replaceAll('enter','e');   
+ 
+        document.getElementById("textoMostrado").textContent = desencriptado;
+        sin_texto.style.display = "none";
+        texto_escrito.style.display = "block";
+    }
+
+    function copiar() {
+      navigator.clipboard.writeText(document.getElementById("textoMostrado").textContent);
+  }
+
+</script>
+
+<script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
