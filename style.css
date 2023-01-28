@@ -8,6 +8,7 @@ header{
     align-items: flex-start;
     padding: 0px;
     gap: 40px;
+    margin: 10px 0px 10px;
 }
 
 header img{
@@ -18,13 +19,25 @@ header img{
     top: 40px;
 }
 
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 .primera-seccion{
-    display: inline-block;
+    /* display: inline-block; */
     width: auto;
 }
 
+.texto-escrito{
+    padding: 170px 90px;
+    margin-bottom: 10px;
+    border: 0px;
+}
+
 .segunda-seccion{
-    display: inline-block;
+    /* display: inline-block; */
     width: 400px;
     border: 1px solid blue;       
     text-align: center;
