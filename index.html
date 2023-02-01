@@ -20,9 +20,9 @@
 
         <main>
             <section class="primera-seccion">                   
-                <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
+                <!-- <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea> -->
                 
-                <input type="text" class="texto-escrito"/>
+                <input type="text" class="texto-escrito" placeholder="Ingrese el texto aquí"/>
                  
                 <div>
                     <h6><iconify-icon inline icon="bi:exclamation-circle-fill" style="color: #65747d;"></iconify-icon> Solo letras minúsculas sin acento</h6>
@@ -34,12 +34,12 @@
                 </div> 
             </section>
 
-            <section>
+            <!-- <section>
                 <textarea class="mensaje" cols="20" rows="10"></textarea>
                 <div>
                     <button class="copiar">Copiar</button>
                 </div>
-            </section>
+            </section> -->
             
             <section class="segunda-seccion">
                 <div class="area-texto" id="imagen-no-texto">
@@ -50,7 +50,7 @@
 
                 <div class="area-texto" id="texto-escrito">
                     <p id="textoMostrado"></p>
-                    <button id="copy" onclick='copiar()'>Copy</button>
+                    <button class="copiar" onclick='copiar()'>Copy</button>
                 </div>
             </section>
         </main>
