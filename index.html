@@ -20,17 +20,17 @@
 
         <main>
             <section class="primera-seccion">                   
-                <!-- <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea> -->
+                <textarea class="texto-escrito" cols="30" rows="10" placeholder="Ingrese el texto aquí"></textarea>
                 
-                <input type="text" class="texto-escrito" placeholder="Ingrese el texto aquí"/>
+                <!-- <input type="text" class="texto-escrito" placeholder="Ingrese el texto aquí"/> -->
                  
                 <div>
-                    <h6><iconify-icon inline icon="bi:exclamation-circle-fill" style="color: #65747d;"></iconify-icon> Solo letras minúsculas sin acento</h6>
+                    <h6 class="informacion"><iconify-icon inline icon="bi:exclamation-circle-fill" style="color: #65747d;"></iconify-icon> Solo letras minúsculas sin acento</h6>
                 </div>
                                 
                 <div class= "botones" > 
                     <button onclick='encriptacion()' class="btn-encriptar">Encriptar</button>
-                    <button onclick='desencriptacion()' class="btn-encriptar">Desencriptar</button>
+                    <button onclick='desencriptacion()' class="btn-desencriptar">Desencriptar</button>
                 </div> 
             </section>
 
@@ -44,12 +44,12 @@
             <section class="segunda-seccion">
                 <div class="area-texto" id="imagen-no-texto">
                     <img class="muñeco" src="Imagenes/Muñeco.png" alt="Imagen de no texto">
-                    <p>Ningún mensaje fue encontrado</p>
-                    <p>Ingresa el texto que desees encriptar o desencriptar.</p> 
+                    <p class="texto-info">Ningún mensaje fue encontrado</p>
+                    <p class="texto-info">Ingresa el texto que desees encriptar o desencriptar.</p> 
                 </div>
 
-                <div class="area-texto" id="texto-escrito">
-                    <p id="textoMostrado"></p>
+                <div class="area-texto" id="texto-cambiado">
+                    <p id="textoMostrado" class="texto-info"></p>
                     <button class="copiar" onclick='copiar()'>Copy</button>
                 </div>
             </section>
@@ -74,7 +74,7 @@
 
     var sin_texto = document.getElementById("imagen-no-texto");
 
-    var texto_escrito = document.getElementById("texto-escrito");
+    var texto_escrito = document.getElementById("texto-cambiado");
     texto_escrito.style.display = "none";
     
     function encriptacion(){ 
