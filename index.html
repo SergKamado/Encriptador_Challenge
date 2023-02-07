@@ -33,13 +33,6 @@
                     <button onclick='desencriptacion()' class="btn-desencriptar">Desencriptar</button>
                 </div> 
             </section>
-
-            <!-- <section>
-                <textarea class="mensaje" cols="20" rows="10"></textarea>
-                <div>
-                    <button class="copiar">Copiar</button>
-                </div>
-            </section> -->
             
             <section class="segunda-seccion">
                 <div class="area-texto" id="imagen-no-texto">
@@ -62,23 +55,21 @@
 
         </footer>
 
+
     </body>
 </html>
 
 <script >
-
-    var texto = document.querySelector(".texto-escrito");
-    // texto.select();
-    texto.textContent = texto.textContent.toLowerCase()
-
-
-    var sin_texto = document.getElementById("imagen-no-texto");
-
+    const texto = document.querySelector(".texto-escrito");
+    const sin_texto = document.getElementById("imagen-no-texto");
     var texto_escrito = document.getElementById("texto-cambiado");
     texto_escrito.style.display = "none";
-    
+
     function encriptacion(){ 
-        encriptado= texto.value.replaceAll('e','enter');   
+        encriptado = texto.value
+        encriptado = encriptado.toLowerCase()
+
+        encriptado= encriptado.replaceAll('e','enter');   
         encriptado= encriptado.replaceAll('i','imes');  
         encriptado= encriptado.replaceAll('a','ai');  
         encriptado= encriptado.replaceAll('o','ober');  
@@ -87,24 +78,28 @@
         document.getElementById("textoMostrado").textContent = encriptado;
         sin_texto.style.display = "none";
         texto_escrito.style.display = "block";
+        texto.value = ""
     }
 
     function desencriptacion(){ 
-        desencriptado= texto.value.replaceAll('ufat','u');   
+        desencriptado = texto.value
+        desencriptado = desencriptado.toLowerCase()
+
+        desencriptado= desencriptado.replaceAll('ufat','u');   
         desencriptado= desencriptado.replaceAll('ober','o');  
         desencriptado= desencriptado.replaceAll('ai','a');
         desencriptado= desencriptado.replaceAll('imes','i'); 
         desencriptado= desencriptado.replaceAll('enter','e');   
- 
+
         document.getElementById("textoMostrado").textContent = desencriptado;
         sin_texto.style.display = "none";
         texto_escrito.style.display = "block";
+        texto.value = ""
     }
 
     function copiar() {
-      navigator.clipboard.writeText(document.getElementById("textoMostrado").textContent);
+        navigator.clipboard.writeText(document.getElementById("textoMostrado").textContent);
     }
-
 </script>
 
 <script src="https://code.iconify.design/iconify-icon/1.0.2/iconify-icon.min.js"></script>
